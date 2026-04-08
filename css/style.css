@@ -178,3 +178,59 @@ section h1 {
   font-size: 14px;
   margin: 0;
 }
+
+
+/******/
+.doctors-page {
+  background-color: var(--bg-light);
+}
+.doctors-page input,
+.doctors-page select {
+  background-color: #e9ecef !important;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+}
+
+.doctors-page .doctor-card {
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  border: 2px solid var(--primary);
+  transition: 0.3s;
+}
+
+.doctors-page .doctor-card:hover {
+  transform: scale(1.05);
+}
+
+.doctors-page .doctor-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: auto;
+  font-size: 20px;
+}
+.doctors-page .bg-light {
+  background-color: #f1f3f5 !important;
+}
+.doctors-page .navbar {
+  background-color: #e9ecef !important;
+}
+.doctors-page .navbar a {
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+.doctors-page .navbar a:hover {
+  color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+  padding-bottom: 3px;
+}
