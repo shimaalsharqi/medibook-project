@@ -234,3 +234,118 @@ section h1 {
     border-bottom: 2px solid var(--primary);
   padding-bottom: 3px;
 }
+
+/**/
+/* Calendar Days */
+#daysContainer div {
+  padding: 10px;
+  border-radius: 8px;
+  background: #eee;
+  cursor: pointer;
+  text-align: center;
+  width: 60px;
+}
+
+#daysContainer div.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* Time Slots */
+.time-slots button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background: #e9ecef;
+  cursor: pointer;
+}
+
+.time-slots button.active {
+  background: var(--primary);
+  color: white;
+}
+
+
+.summary-box {
+  background: #f4f1a1;
+  border-radius: 10px;
+  position: sticky;
+  top: 100px;
+}
+
+/* Form */
+.appointment-page input,
+.appointment-page textarea {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+}
+#confirmationCard {
+  border-left: 6px solid var(--primary);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.appointment-page .navbar {
+  background-color: #e9ecef !important;
+}
+.appointment-page .navbar a {
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+.appointment-page .navbar a:hover {
+  color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+  padding-bottom: 3px;
+}
+.summary-box {
+  position: sticky;
+  top: 100px;
+}
+#daysContainer {
+  display: flex;
+  gap: 10px;
+}
+/* ===== MOBILE FIXES ===== */
+@media (max-width: 768px) {
+
+  /* الأيام */
+  #daysContainer {
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  #daysContainer div {
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+
+  /* التواقيت */
+  .time-slots {
+    justify-content: center;
+  }
+
+  .time-slots button {
+    flex: 1 1 45%;
+  }
+
+  /* الفورم */
+  .appointment-page form {
+    padding: 20px;
+  }
+
+  /* السايد بار */
+  .summary-box {
+    position: static;
+    margin-top: 20px;
+  }
+
+  /* confirmation */
+  #confirmationCard {
+    font-size: 14px;
+  }
+}
