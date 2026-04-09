@@ -55,7 +55,7 @@ fetch('./data.json')
     services.forEach(service => {
 
       let card = `
-        <div class="col-md-4 mb-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
           <div class="card text-center p-4 shadow-sm h-100">
 
             <div style="font-size:40px;">
@@ -98,28 +98,41 @@ fetch('./data.json')
         stars += "⭐";
       }
 
-      let card = `
-        <div class="col-md-4 mb-4">
-          <div class="card p-4 shadow-sm h-100 text-center">
+    let initials = doc.name.split(" ").map(n => n[0]).join("");
 
-            <h5 class="fw-bold">${doc.name}</h5>
+let card = `
+  <div class="col-md-3 mb-4">
+    <div class="doctor-card-custom text-center">
 
-            <span class="badge bg-primary mb-2">
-              ${doc.specialty}
-            </span>
-
-            <div class="mb-2" style="font-size:18px;">
-              ${stars}
-            </div>
-
-            <p class="text-muted">
-              ${doc.experience} years experience
-            </p>
-
-          </div>
+      <div class="doctor-image">
+        <div class="doctor-avatar">
+          ${initials}
         </div>
-      `;
+      </div>
 
+      <div class="doctor-info">
+        <p class="status">
+          <span class="dot"></span> Available
+        </p>
+
+        <h5 class="fw-bold">${doc.name}</h5>
+
+        <p class="text-muted mb-1">
+          ${doc.specialty}
+        </p>
+
+        <div class="stars mb-1">
+          ${stars}
+        </div>
+
+        <small class="text-muted">
+          ${doc.experience} years experience
+        </small>
+      </div>
+
+    </div>
+  </div>
+`;
       container.innerHTML += card;
 
     });

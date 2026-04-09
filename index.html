@@ -2,116 +2,116 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediBook</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediBook</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/all.min.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container container-fluid">
-            <a class="navbar-brand fw-bold" href="#">
-                Medi<span class="text-primary">Book+</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 linkk">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#Home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#Doctors">Doctors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#Services">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#Contact">Contact</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-    </nav>
-    <section class="hero text-white d-flex align-items-center" id="Home">
-  <div class="container text-center">
-<h1>Your Health, <span id="typing"></span></h1>   
-    <button class="btn fw-bold">Book Appointment</button>
-  </div>
-</section>
-<section class="services-section py-5" id="Services">
-  <h2 class="text-center mb-4">Our Services</h2>
-  <div class="services-wrapper">
-    <div class="services-track" id="servicesTrack"></div>
-  </div>
-</section>
-<section class="Featured container my-5" id="Doctors">
-  <h2 class="text-center mb-4">Featured Doctors</h2>
-  <div id="doctorsRow" class="row"></div>
-</section>
-<section class="bg-light py-5">
-  <h2 class="text-center mb-4">Clinic stats</h2>
-  <div class="row text-center justify-content-center g-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <div class="container container-fluid">
+      <a class="navbar-brand fw-bold" href="#">
+        Medi<span class="text-primary">Book<i class="fa-regular fa-calendar-plus"></i></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-  <div class="col-4">
-    <h1 class="fw-bold text-primary counter" data-target="50">0</h1>
-    <p class="text-muted">Doctors</p>
-  </div>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="#Home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Doctors">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="hero text-white d-flex align-items-center" id="Home">
+    <div class="container text-center">
+      <h1>Your Health, <span id="typing"></span></h1>
+      <a href="Booking.html" class="btn fw-bold mt-3">
+  Book Appointment
+</a>
+    </div>
+  </section>
+  <section class="services-section py-5" id="Services">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="services-wrapper">
+      <div class="services-track" id="servicesTrack"></div>
+    </div>
+  </section>
+  <section class="Featured container my-5" id="Doctors">
+    <h2 class="text-center mb-4">Featured Doctors</h2>
+    <div id="doctorsRow" class="row"></div>
+  </section>
+  <section class="bg-light py-5">
+    <h2 class="text-center mb-4">Clinic stats</h2>
+    <div class="row text-center justify-content-center g-4">
 
-  <div class="col-4">
-    <h1 class="fw-bold text-primary counter" data-target="1000">0</h1>
-    <p class="text-muted">Patients Served</p>
-  </div>
+      <div class="col-12 col-md-4">
+        <h1 class="fw-bold text-primary counter" data-target="50">0</h1>
+        <p class="text-muted">Doctors</p>
+      </div>
 
-  <div class="col-4">
-    <h1 class="fw-bold text-primary counter" data-target="6">0</h1>
-    <p class="text-muted">Specialties</p>
-  </div>
+      <div class="col-12 col-md-4">
+        <h1 class="fw-bold text-primary counter" data-target="1000">0</h1>
+        <p class="text-muted">Patients Served</p>
+      </div>
 
-</div>
-</section>
-<footer class="bg-dark text-white text-center p-4" id="Contact">
+      <div class="col-12 col-md-4">
+        <h1 class="fw-bold text-primary counter" data-target="6">0</h1>
+        <p class="text-muted">Specialties</p>
+      </div>
 
-  <div class="d-flex justify-content-center gap-4 flex-wrap">
+    </div>
+  </section>
+  <footer class="bg-dark text-white text-center p-4" id="Contact">
 
-    <div class="footer-item">
-      <span class="icon-circle-footer">
-        <i class="fa-solid fa-location-dot"></i>
-      </span>
-      <p>45 Al Khuwair Street, Muscat, Oman</p>
+<div class="d-flex justify-content-center gap-4 flex-wrap text-center">
+      <div class="footer-item">
+        <span class="icon-circle-footer">
+          <i class="fa-solid fa-location-dot"></i>
+        </span>
+        <p>45 Al Khuwair Street, Muscat, Oman</p>
+      </div>
+
+      <div class="footer-item">
+        <span class="icon-circle-footer">
+          <i class="fa-solid fa-phone"></i>
+        </span>
+        <p>+968 2455 7890</p>
+      </div>
+
+      <div class="footer-item">
+        <span class="icon-circle-footer">
+          <i class="fa-solid fa-envelope"></i>
+        </span>
+        <p>appointments@medibook.com</p>
+      </div>
+
+      <div class="footer-item">
+        <span class="icon-circle-footer">
+          <i class="fa-solid fa-clock"></i>
+        </span>
+        <p>Sun–Thu 8:00 AM – 8:00 PM</p>
+      </div>
+
     </div>
 
-    <div class="footer-item">
-      <span class="icon-circle-footer">
-        <i class="fa-solid fa-phone"></i>
-      </span>
-      <p>+968 2455 7890</p>
-    </div>
-
-    <div class="footer-item">
-      <span class="icon-circle-footer">
-        <i class="fa-solid fa-envelope"></i>
-      </span>
-      <p>appointments@medibook.com</p>
-    </div>
-
-    <div class="footer-item">
-      <span class="icon-circle-footer">
-        <i class="fa-solid fa-clock"></i>
-      </span>
-      <p>Sun–Thu 8:00 AM – 8:00 PM</p>
-    </div>
-
-  </div>
-
-</footer>
+  </footer>
 
 
 
@@ -130,9 +130,9 @@
 
 
 
-    <script src="./js/all.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+  <script src="./js/all.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
