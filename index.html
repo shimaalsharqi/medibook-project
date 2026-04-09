@@ -37,6 +37,13 @@
           </li>
         </ul>
       </div>
+      <div class="theme-switcher">
+  <input type="checkbox" id="dark-mode-toggle">
+  <label for="dark-mode-toggle" class="theme-label">
+    <i class="fa-solid fa-moon"></i>
+    <i class="fa-solid fa-sun"></i>
+  </label>
+</div>
     </div>
   </nav>
   <section class="hero text-white d-flex align-items-center" id="Home">
@@ -50,34 +57,42 @@
   <section class="services-section py-5" id="Services">
     <h2 class="text-center mb-4">Our Services</h2>
     <div class="services-wrapper">
-      <div class="services-track" id="servicesTrack"></div>
-    </div>
+
+  <!-- الصف الأول -->
+  <div class="services-track track-right" id="rowTop"></div>
+
+  <!-- الصف الثاني -->
+  <div class="services-track track-left mt-4" id="rowBottom"></div>
+
+</div>
   </section>
   <section class="Featured container my-5" id="Doctors">
     <h2 class="text-center mb-4">Featured Doctors</h2>
     <div id="doctorsRow" class="row"></div>
   </section>
-  <section class="bg-light py-5">
-    <h2 class="text-center mb-4">Clinic stats</h2>
-    <div class="row text-center justify-content-center g-4">
+  <section class="bg-light py-5" id="statsSection">
+  <h2 class="text-center mb-4">Clinic stats</h2>
 
-      <div class="col-12 col-md-4">
-        <h1 class="fw-bold text-primary counter" data-target="50">0</h1>
-        <p class="text-muted">Doctors</p>
-      </div>
+  <div class="row text-center justify-content-center g-4">
 
-      <div class="col-12 col-md-4">
-        <h1 class="fw-bold text-primary counter" data-target="1000">0</h1>
-        <p class="text-muted">Patients Served</p>
-      </div>
-
-      <div class="col-12 col-md-4">
-        <h1 class="fw-bold text-primary counter" data-target="6">0</h1>
-        <p class="text-muted">Specialties</p>
-      </div>
-
+    <div class="col-12 col-md-4">
+      <h1 class="fw-bold text-primary counter" data-target="50">0</h1>
+      <p class="text-muted">Doctors</p>
     </div>
-  </section>
+
+    <div class="col-12 col-md-4">
+      <h1 class="fw-bold text-primary counter" data-target="1000">0</h1>
+      <p class="text-muted">Patients Served</p>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <h1 class="fw-bold text-primary counter" data-target="6">0</h1>
+      <p class="text-muted">Specialties</p>
+    </div>
+
+  </div>
+</section>
+ 
   <footer class="bg-dark text-white text-center p-4" id="Contact">
 
 <div class="d-flex justify-content-center gap-4 flex-wrap text-center">

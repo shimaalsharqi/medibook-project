@@ -3,7 +3,25 @@ window.addEventListener("scroll", () => {
 });
 
 
+// عند تحميل الصفحة، نقرأ التفضيل من localStorage
+const toggle = document.getElementById('dark-mode-toggle');
+const body = document.body;
 
+if(localStorage.getItem('darkMode') === 'enabled'){
+  body.classList.add('dark');
+  toggle.checked = true;
+}
+
+// تغيير الدارك مود عند النقر
+toggle.addEventListener('change', () => {
+  if(toggle.checked){
+    body.classList.add('dark');
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    body.classList.remove('dark');
+    localStorage.setItem('darkMode', 'disabled');
+  }
+});
 const words = ["Our Priority", "Our Mission", "Our Care"];
 let i = 0; // الكلمة الحالية
 let j = 0; // الحروف
@@ -141,72 +159,76 @@ let card = `
 
 const services = [
   { name: "General Medicine", icon: "fa-solid fa-stethoscope", description: "Comprehensive check-ups and treatment for common illnesses." },
-  { name: "Cardiology", icon: "fa-solid fa-heart", description: "Expert heart care including ECG, stress tests, and consultations." },
-  { name: "Dermatology", icon: "fa-solid fa-sun", description: "Skin, hair, and nail diagnosis and treatment." },
-  { name: "Pediatrics", icon: "fa-solid fa-baby", description: "Specialized healthcare for infants, children, and teenagers." },
-  { name: "Orthopedics", icon: "fa-solid fa-bone", description: "Bone, joint, and muscle disorders diagnosis and treatment." },
-  { name: "Dentistry", icon: "fa-solid fa-tooth", description: "Full dental care including cleaning, fillings, and orthodontics." },
+  { name: "Cardiology", icon: "fa-solid fa-heart", description: "Heart care and consultations." },
+  { name: "Dermatology", icon: "fa-solid fa-sun", description: "Skin and hair treatment." },
+
+  { name: "Pediatrics", icon: "fa-solid fa-baby", description: "Healthcare for children." },
+  { name: "Orthopedics", icon: "fa-solid fa-bone", description: "Bone and joint care." },
+  { name: "Dentistry", icon: "fa-solid fa-tooth", description: "Full dental care." },
 ];
 
-const container = document.getElementById("servicesTrack");
+const rowTop = document.getElementById("rowTop");
+const rowBottom = document.getElementById("rowBottom");
 
-function renderServices() {
-  container.innerHTML = "";
-  services.forEach(s => {
-    let card = document.createElement("div");
-    card.className = "service-card";
-    card.innerHTML = `
+function createCard(s) {
+  return `
+    <div class="service-card">
       <div class="icon-circle"><i class="${s.icon}"></i></div>
       <h5>${s.name}</h5>
       <p>${s.description}</p>
-    `;
-    container.appendChild(card);
-  });
-
-  // Duplicate for smooth infinite scroll
-  services.forEach(s => {
-    let card = document.createElement("div");
-    card.className = "service-card";
-    card.innerHTML = `
-      <div class="icon-circle"><i class="${s.icon}"></i></div>
-      <h5>${s.name}</h5>
-      <p>${s.description}</p>
-    `;
-    container.appendChild(card);
-  });
+    </div>
+  `;
 }
 
-renderServices();
+// أول 3 فوق
+const topServices = services.slice(0, 3);
+
+// ثاني 3 تحت
+const bottomServices = services.slice(3, 6);
+
+// render + duplicate للانيميشن
+function render(row, data) {
+  row.innerHTML = "";
+
+  data.forEach(s => row.innerHTML += createCard(s));
+  data.forEach(s => row.innerHTML += createCard(s)); // duplication
+}
+
+render(rowTop, topServices);
+render(rowBottom, bottomServices);
+document.addEventListener("DOMContentLoaded", () => {
+
   const counters = document.querySelectorAll(".counter");
-let started = false;
+  let started = false;
 
-function startCounting() {
-  counters.forEach(counter => {
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
+  function startCounting() {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      let count = 0;
 
-    const update = () => {
-      let increment = target / 100;
+      const update = () => {
+        let increment = target / 100;
 
-      if (count < target) {
-        count += increment;
-        counter.textContent = Math.floor(count);
-        setTimeout(update, 20);
-      } else {
-        counter.textContent = target + "+";
-      }
-    };
+        if (count < target) {
+          count += increment;
+          counter.textContent = Math.floor(count);
+          setTimeout(update, 20);
+        } else {
+          counter.textContent = target + "+";
+        }
+      };
 
-    update();
-  });
-}
-
-window.addEventListener("scroll", () => {
-  const section = document.querySelector(".bg-light");
-
-  if (window.scrollY >= section.offsetTop - 300 && !started) {
-    startCounting();
-    started = true;
+      update();
+    });
   }
+
+  window.addEventListener("scroll", () => {
+    const section = document.getElementById("statsSection");
+
+    if (window.scrollY >= section.offsetTop - 300 && !started) {
+      startCounting();
+      started = true;
+    }
+  });
+
 });
-let increment = target / 200;
