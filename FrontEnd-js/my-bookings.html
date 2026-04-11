@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Bookings</title>
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+</head>
+
+<body class="appointment-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg px-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        Medi<span class="text-primary">Book</span>
+      </a>
+
+      <div class="ms-auto">
+        <a class="linkk" href="index.html">Home</a>
+        <a class="linkk" href="doctors.html">Doctors</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="container py-5">
+
+    <h2 class="text-center mb-4">My Bookings</h2>
+
+    <!-- زر حذف -->
+    <div class="text-center mb-4">
+      <button onclick="clearBookings()" class="btn btn-danger">
+        Clear All Bookings
+      </button>
+    </div>
+
+    <!-- عرض الحجوزات -->
+    <div id="bookingsContainer" class="row"></div>
+
+  </div>
+
+  <script src="./js/my-bookings.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

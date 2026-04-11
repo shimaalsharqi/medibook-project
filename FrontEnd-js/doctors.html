@@ -23,6 +23,13 @@
         <a class="linkk" href="index.html">Home</a>
         <a class="linkk" href="doctors.html">Doctors</a>
       </div>
+      <div class="theme-switcher">
+  <input type="checkbox" id="dark-mode-toggle">
+<label for="dark-mode-toggle" class="theme-label">
+  <i class="fa-solid fa-moon"></i>
+  <i class="fa-solid fa-sun"></i>
+</label>
+</div>
     </div>
   </nav>
 
@@ -74,7 +81,19 @@
 
     </div>
   </div>
+  <div class="position-fixed top-0 end-0 p-3" style="z-index: 9999">
+  <div id="toastMsg" class="toast align-items-center text-white bg-success border-0">
+    
+    <div class="d-flex">
+      <div class="toast-body">
+        Doctor selected successfully!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
 
+  </div>
+</div>
+<script src="./js/theme.js"></script>
   <script src="JS/doctors.js"></script>
   <script src="./js/all.min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>

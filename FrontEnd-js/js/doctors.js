@@ -101,9 +101,23 @@ function applyFilters() {
 
 
 function bookDoctor(id) {
+
   const selected = doctors.find(d => d.id === id);
 
+  // 💾 تخزين
   localStorage.setItem("selectedDoctor", JSON.stringify(selected));
 
-  alert("Doctor selected successfully!");
+  // 🔥 Toast
+  const toastElement = document.getElementById("toastMsg");
+  const toast = new bootstrap.Toast(toastElement);
+
+  toast.show();
+
+  
+  setTimeout(() => {
+    window.location.href = "Booking.html";
+  }, 2000);
+
 }
+document.querySelector(".toast-body").textContent =
+  `Dr. ${selected.name} selected successfully!`;

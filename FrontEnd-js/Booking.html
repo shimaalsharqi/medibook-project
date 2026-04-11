@@ -34,7 +34,13 @@
           <a class="linkk d-block d-lg-inline" href="doctors.html">Doctors</a>
         </div>
       </div>
-
+<div class="theme-switcher">
+  <input type="checkbox" id="dark-mode-toggle">
+<label for="dark-mode-toggle" class="theme-label">
+  <i class="fa-solid fa-moon"></i>
+  <i class="fa-solid fa-sun"></i>
+</label>
+</div>
     </div>
   </nav>
 
@@ -55,7 +61,7 @@
           <div class="d-flex gap-2 mb-3" id="daysContainer"></div>
 
           <!-- TIMES -->
-          <div class="mt-4">
+          <div class=" time-Available mt-4">
             <h6>Available Time</h6>
             <div class="time-slots d-flex flex-wrap gap-2 mt-2" id="timeSlots"></div>
           </div>
@@ -159,6 +165,7 @@
   <script src="./js/Booking.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/all.min.js"></script>
+  <script src="./js/theme.js"></script>
 
 </body>
 

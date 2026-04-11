@@ -22,22 +22,38 @@ if (doctor) {
 }
 
 // ==========================
-// GENERATE DAYS (7 DAYS)
+// GENERATE DAYS (WITH NAME)
 // ==========================
-for (let i = 1; i <= 7; i++) {
+const dayNames = ["S","M","T","W","T","F","S"];
+
+for (let i = 0; i < 7; i++) {
   let d = new Date();
   d.setDate(d.getDate() + i);
 
+  let dayIndex = d.getDay();
+
   let div = document.createElement("div");
-  div.textContent = d.getDate();
+  div.classList.add("day-box");
+
+  div.innerHTML = `
+    <span class="day-name">${dayNames[dayIndex]}</span>
+    <span class="day-number">${d.getDate()}</span>
+  `;
 
   div.onclick = () => {
-    document.querySelectorAll("#daysContainer div").forEach(el => el.classList.remove("active"));
+    document.querySelectorAll(".day-box").forEach(el => el.classList.remove("active"));
     div.classList.add("active");
 
     selectedDate = d.toISOString().split("T")[0];
     generateTimes();
   };
+
+  // أول يوم يكون محدد
+  if (i === 0) {
+    div.classList.add("active");
+    selectedDate = d.toISOString().split("T")[0];
+    generateTimes();
+  }
 
   daysContainer.appendChild(div);
 }
@@ -201,5 +217,5 @@ form.addEventListener("submit", function(e){
 // NAVIGATION BUTTON
 // ==========================
 function goToAppointments() {
-  window.location.href = "appointments.html";
+  window.location.href = "my-bookings.html";
 }

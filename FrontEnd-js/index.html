@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="./css/all.min.css">
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+<body class="home-page">
+  <nav class="navbar navbar-expand-lg px-3">
     <div class="container container-fluid">
       <a class="navbar-brand fw-bold" href="#">
         Medi<span class="text-primary">Book<i class="fa-regular fa-calendar-plus"></i></span>
@@ -39,10 +39,10 @@
       </div>
       <div class="theme-switcher">
   <input type="checkbox" id="dark-mode-toggle">
-  <label for="dark-mode-toggle" class="theme-label">
-    <i class="fa-solid fa-moon"></i>
-    <i class="fa-solid fa-sun"></i>
-  </label>
+<label for="dark-mode-toggle" class="theme-label">
+  <i class="fa-solid fa-moon"></i>
+  <i class="fa-solid fa-sun"></i>
+</label>
 </div>
     </div>
   </nav>
@@ -68,7 +68,7 @@
   </section>
   <section class="Featured container my-5" id="Doctors">
     <h2 class="text-center mb-4">Featured Doctors</h2>
-    <div id="doctorsRow" class="row"></div>
+    <div id="doctorsRow" class="row doctorsRow"></div>
   </section>
   <section class="bg-light py-5" id="statsSection">
   <h2 class="text-center mb-4">Clinic stats</h2>
@@ -144,7 +144,7 @@
 
 
 
-
+<script src="./js/theme.js"></script>
   <script src="./js/all.min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/main.js"></script>
