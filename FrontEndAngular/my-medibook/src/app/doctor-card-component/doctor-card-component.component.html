@@ -1,0 +1,49 @@
+<div class="card doctor-card p-3 mb-4"
+     style="border-radius: 8px; border: 1px solid black;">
+
+  <h5 class="doctor-name">{{ doctor.name }}</h5>
+
+  <div [ngSwitch]="doctor.specialty" class="mb-2">
+
+    <span *ngSwitchCase="'Cardiology'" class="badge bg-danger">
+      Cardiology
+    </span>
+
+    <span *ngSwitchCase="'Dermatology'" class="badge bg-success">
+      Dermatology
+    </span>
+
+    <span *ngSwitchCase="'Pediatrics'" class="badge bg-primary">
+      Pediatrics
+    </span>
+
+    <span *ngSwitchCase="'Orthopedics'" class="badge bg-warning text-dark">
+      Orthopedics
+    </span>
+
+    <span *ngSwitchDefault class="badge bg-secondary">
+      {{ doctor.specialty }}
+    </span>
+
+  </div>
+
+  <p class="text-muted mb-1">
+    <i class="fa-solid fa-user-doctor me-1"></i>
+    {{ doctor.experience }} years experience
+  </p>
+
+  <p class="mb-2">
+    ⭐ <b>{{ doctor.rating }}</b>
+  </p>
+
+  <p *ngIf="!doctor.available" class="text-danger fw-bold">
+    Fully Booked
+  </p>
+
+  <button class="btn btn-book mt-2"
+          (click)="bookDoctor()"
+          *ngIf="doctor.available">
+    Book Appointment
+  </button>
+
+</div>
