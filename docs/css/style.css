@@ -1,0 +1,559 @@
+/* ================= ROOT ================= */
+:root {
+  /* Primary */
+  --primary: #0d6efd;
+  --primary-hover: #0b5ed7;
+
+  /* Backgrounds */
+  --bg-light: #f8f9fa;
+  --bg-dark: #121212;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-footer: #000000;
+  --bg-section-alt: #f1f3f5;
+  --bg-input: #e9ecef;
+  --bg-summary: #f4f1a1;
+  --bg-doctor-header: #eef2f7;
+
+  /* Cards */
+  --card-bg: #ffffff;
+  --card-bg-dark: #1f1f1f;
+
+  /* Text */
+  --text-dark: #212529;
+  --text-light: #ffffff;
+  --text-muted: #6c757d;
+
+  /* Status */
+  --success: green;
+  --warning: #ffc107;
+  --error: #dc3545;
+
+  /* Borders */
+  --border-light: #eee;
+
+  /* Shadows */
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ================= NAVBAR ================= */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: var(--border-light);
+}
+.home-page .nav-link,
+.doctors-page .linkk,
+ .appointment-page .linkk{
+  color: var(--bg-footer);
+}
+.doctors-page .linkk,
+ .appointment-page .linkk{
+  text-decoration: none;
+  padding: 10px;
+}
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  transition: 0.3s;
+}
+
+.navbar-toggler-icon{
+ background-color: #000 !important;
+ color: #0b5ed7 !important;
+
+  
+}
+/* ===== Theme Switcher ===== */
+.theme-switcher {
+  position: relative;
+}
+
+#dark-mode-toggle {
+  display: none;
+}
+
+.theme-label {
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+/* نخفي الشمس بالبداية */
+.theme-label .fa-sun {
+  display: none;
+}
+
+/* لما يتفعل الدارك */
+#dark-mode-toggle:checked + .theme-label .fa-moon {
+  display: none;
+}
+
+#dark-mode-toggle:checked + .theme-label .fa-sun {
+  display: inline;
+  color: var(--warning);
+}
+
+/* لون القمر */
+.theme-label .fa-moon {
+  color: var(--primary);
+}
+
+/* في الدارك */
+body.dark .theme-label {
+  color: var(--text-light);
+}
+/* ================= HERO ================= */
+.hero {
+  height: 100vh;
+  background: url('../images/Home.png') center center / cover no-repeat;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-overlay);
+}
+
+.hero .container {
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 50px;
+}
+
+.hero .btn {
+  border: 2px solid var(--primary);
+  background-color: var(--text-light);
+  color: var(--primary);
+  border-radius: 8px;
+}
+
+#typing {
+  color: var(--primary);
+  font-weight: bold;
+  border-right: 2px solid var(--text-light);
+  padding-right: 5px;
+}
+
+/* ================= SERVICES ================= */
+.services-section {
+  background-color: var(--bg-light);
+  overflow: hidden;
+}
+
+.services-wrapper {
+  overflow: hidden;
+}
+
+.services-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+/* حركة الصفوف */
+.track-right {
+  animation: moveRight 20s linear infinite;
+}
+
+.track-left {
+  animation: moveLeft 20s linear infinite;
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes moveLeft {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.service-card {
+  flex: 0 0 250px;
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--primary-hover);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--text-light);
+  font-size: 30px;
+}
+
+/* ================= DOCTORS ================= */
+.doctor-card-custom {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+  border: #6c757d solid 2px;
+ 
+}
+
+.doctor-card-custom:hover {
+  transform: translateY(-8px);
+}
+
+.doctor-image {
+  background: var(--bg-doctor-header);
+  padding: 30px 0;
+}
+
+.doctor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--text-light);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.doctors-page{
+  background-color: var(-);
+}
+/* .doctor-info {
+  padding: 20px;
+} */
+/* ===== Doctors Page Styling ===== */
+
+/* كروت الدكاترة */
+.doctors-page .doctor-card,
+.doctors-page .doctor-card-custom {
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  
+}
+
+
+/* Hover للكارد */
+.doctors-page .doctor-card:hover,
+.doctors-page .doctor-card-custom:hover {
+  border-color: var(--primary-hover);
+}
+
+/* input + select */
+.doctors-page input,
+.doctors-page select {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+/* لما تضغط على الانبوت */
+.doctors-page input:focus,
+.doctors-page select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--primary);
+  outline: none;
+}
+.status {
+  color: var(--success);
+  font-size: 14px;
+}
+
+.status .dot {
+  height: 8px;
+  width: 8px;
+  background: var(--success);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.stars {
+  color: var(--warning);
+}
+
+/* ================= COUNTER ================= */
+.counter {
+  font-size: 40px;
+}
+
+/* ================= FOOTER ================= */
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-circle-footer {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+
+/* ================= FORM ================= */
+.summary-box {
+  background: var(--bg-summary);
+  border-radius: 10px;
+  position: sticky;
+  top: 100px;
+}
+
+.appointment-page input,
+.appointment-page textarea {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+}
+
+/* ================= ANIMATION ================= */
+#confirmationCard {
+  border-left: 6px solid var(--primary);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero .btn {
+    width: 100%;
+  }
+
+  .doctor-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .summary-box {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+
+/* ================= DARK MODE ================= */
+
+body.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* 🔥 كل السكاشن */
+body.dark section,
+body.dark .services-section,
+body.dark .Featured,
+body.dark #statsSection {
+  background-color: #000000 !important;
+}
+
+/* 🔥 Bootstrap bg-light */
+body.dark .bg-light {
+  background-color: #000000 !important;
+}
+
+/* 🔥 الناف بار */
+body.dark nav.navbar {
+  background-color: #000000 !important;
+}
+
+/* 🔥 النصوص كلها */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark span,
+body.dark a,
+body.dark li {
+  color: #ffffff !important;
+}
+
+/* 🔥 اللينكات */
+body.dark .nav-link {
+  color: #ffffff !important;
+}
+
+body.dark .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* 🔥 الكروت (أصفر 💛) */
+body.dark .card,
+body.dark .service-card,
+body.dark .doctor-card,
+body.dark .doctor-card-custom {
+  background-color: #ffc107 !important;
+  color: #000000 !important;
+  border: none;
+}
+
+/* 🔥 داخل الكارد (النص يرجع أسود عشان يبان) */
+body.dark .card *,
+body.dark .service-card *,
+body.dark .doctor-card *,
+body.dark .doctor-card-custom * {
+  color: #000000 !important;
+}
+
+/* 🔥 الفورم */
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #ffc107;
+}
+
+/* 🔥 الأزرار */
+body.dark .btn {
+  background-color: #ffc107;
+  color: #000000;
+  border: none;
+}
+
+/* 🔥 الفوتر */
+body.dark footer {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* 🔥 النصوص الثانوية */
+body.dark .text-muted {
+  color: #cccccc !important;
+}
+
+
+
+
+
+
+/* ===== DAYS CONTAINER ===== */
+#daysContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ===== DAY BOX ===== */
+.day-box {
+  width: 70px;
+  height: 85px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #ddd;
+  transition: 0.3s ease;
+}
+
+/* اسم اليوم */
+.day-name {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+/* رقم اليوم */
+.day-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Hover */
+.day-box:hover {
+  background: #eef4ff;
+  transform: translateY(-2px);
+}
+
+/* Active (مثل الصورة 🔥) */
+.day-box.active {
+  border: 2px solid #0d6efd;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.day-box.active:hover{
+  background-color: #0b5ed7;
+}
+@media (max-width: 768px) {
+  #daysContainer {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .day-box {
+    min-width: 65px;
+  }
+}
+
+.day-box.active .day-number {
+  color: #0d6efd;
+}
+.time-Available button:hover{
+  background-color: #0b5ed7;
+}
+
+.navbar-brand {
+  color: black;
+}
+
+.appointment-page,
+.doctors-page{
+  background-color:#6c757d4e;
+  padding: 10px;
+}
+.doctors-page .doctor-card{
+  background-color: var(--card-bg);
+  transition: 0.3s ease;
+
+}
+.doctors-page .doctor-card:hover{
+  background-color: var(--text-muted);
+  transform: translateY(-4px);
+
+}

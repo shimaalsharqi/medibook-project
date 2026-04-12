@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+
+  <title>Book Appointment</title>
+</head>
+
+<body class="appointment-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+      <a class="navbar-brand fw-bold" href="#">
+        Medi<span class="text-primary">Book<i class="fa-regular fa-calendar-plus"></i></span>
+      </a>
+
+      <!-- Mobile Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <div class="ms-auto">
+          <a class="linkk d-block d-lg-inline" href="index.html">Home</a>
+          <a class="linkk d-block d-lg-inline" href="doctors.html">Doctors</a>
+        </div>
+      </div>
+<div class="theme-switcher">
+  <input type="checkbox" id="dark-mode-toggle">
+<label for="dark-mode-toggle" class="theme-label">
+  <i class="fa-solid fa-moon"></i>
+  <i class="fa-solid fa-sun"></i>
+</label>
+</div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="container contain py-5">
+
+    <h4 class="mb-4">Select a date and time</h4>
+
+    <div class="row">
+
+      <!-- LEFT -->
+      <div class="col-12 col-lg-8">
+
+        <!-- DATE + TIME -->
+        <div class="card p-4 shadow-sm">
+
+          <!-- DAYS -->
+          <div class="d-flex gap-2 mb-3" id="daysContainer"></div>
+
+          <!-- TIMES -->
+          <div class=" time-Available mt-4">
+            <h6>Available Time</h6>
+            <div class="time-slots d-flex flex-wrap gap-2 mt-2" id="timeSlots"></div>
+          </div>
+
+        </div>
+
+        <!-- FORM -->
+        <form id="appointmentForm" class="card p-4 mt-4 shadow-sm">
+
+          <h5>Patient Details</h5>
+
+          <input type="text" id="name" class="form-control mb-2" placeholder="Full Name">
+          <small class="text-danger" id="nameError"></small>
+
+          <input type="email" id="email" class="form-control mb-2" placeholder="Email">
+          <small class="text-danger" id="emailError"></small>
+
+          <input type="tel" id="phone" class="form-control mb-2" placeholder="Phone">
+          <small class="text-danger" id="phoneError"></small>
+
+          <!-- Age -->
+          <input type="number" id="age" class="form-control mb-2" placeholder="Age (1-120)">
+          <small class="text-danger" id="ageError"></small>
+
+          <!-- Gender -->
+          <div class="mb-2">
+            <label class="form-label">Gender</label><br>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+          </div>
+          <small class="text-danger" id="genderError"></small>
+
+          <!-- Insurance -->
+          <select id="insurance" class="form-select mb-2">
+            <option value="">Select Insurance Provider</option>
+            <option>AXA</option>
+            <option>Daman</option>
+            <option>Oman Insurance</option>
+            <option>MedNet</option>
+          </select>
+          <small class="text-danger" id="insuranceError"></small>
+
+          <!-- Concern -->
+          <textarea id="concern" class="form-control mb-2" placeholder="Medical Concern"></textarea>
+          <small class="text-danger" id="concernError"></small>
+
+          <button class="btn btn-primary w-100 mt-3">Confirm Booking</button>
+
+        </form>
+      </div>
+
+      <!-- RIGHT (SUMMARY) -->
+      <div class="col-12 col-lg-4 mt-4 mt-lg-0">
+
+        <div class="summary-box p-3 shadow-sm">
+
+          <h5>Appointment Summary</h5>
+
+          <p id="docName"></p>
+          <p id="docSpecialty"></p>
+          <p id="docDays"></p>
+          <p id="docFee"></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CONFIRMATION -->
+    <div id="confirmationCard" class="card p-4 mt-4 shadow d-none">
+
+      <h4 class="text-success mb-3">✅ Appointment Confirmed</h4>
+
+      <p><strong>Reference Number:</strong> <span id="refNumber"></span></p>
+
+      <hr>
+
+      <h6>Doctor Info</h6>
+      <p><strong>Name:</strong> <span id="confDoctor"></span></p>
+
+      <h6 class="mt-3">Appointment Details</h6>
+      <p><strong>Date:</strong> <span id="confDate"></span></p>
+      <p><strong>Time:</strong> <span id="confTime"></span></p>
+
+      <h6 class="mt-3">Patient Details</h6>
+      <p><strong>Name:</strong> <span id="confPatient"></span></p>
+      <p><strong>Email:</strong> <span id="confEmail"></span></p>
+      <p><strong>Age:</strong> <span id="confAge"></span></p>
+      <p><strong>Gender:</strong> <span id="confGender"></span></p>
+
+      <button onclick="goToAppointments()" class="btn btn-dark mt-3">
+        View My Appointments
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="./js/Booking.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/all.min.js"></script>
+  <script src="./js/theme.js"></script>
+
+</body>
+
+</html>
