@@ -1,8 +1,10 @@
 <div class="card doctor-card p-3 mb-4"
      style="border-radius: 8px; border: 1px solid black;">
 
+  <!-- Display doctor name -->
   <h5 class="doctor-name">{{ doctor.name }}</h5>
 
+  <!-- Show specialty -->
   <div [ngSwitch]="doctor.specialty" class="mb-2">
 
     <span *ngSwitchCase="'Cardiology'" class="badge bg-danger">
@@ -21,26 +23,31 @@
       Orthopedics
     </span>
 
+    <!-- Default case -->
     <span *ngSwitchDefault class="badge bg-secondary">
       {{ doctor.specialty }}
     </span>
 
   </div>
 
+  <!-- Show experience -->
   <p class="text-muted mb-1">
     <i class="fa-solid fa-user-doctor me-1"></i>
     {{ doctor.experience }} years experience
   </p>
 
+  <!-- Show rating -->
   <p class="mb-2">
     ⭐ <b>{{ doctor.rating }}</b>
   </p>
 
+  <!-- Show if not available -->
   <p *ngIf="!doctor.available" class="text-danger fw-bold">
     Fully Booked
   </p>
 
-  <button class="btn btn-book mt-2"
+  <!-- Button to book doctor -->
+  <button class="btn btn-book mt-2 bg-primary"
           (click)="bookDoctor()"
           *ngIf="doctor.available">
     Book Appointment

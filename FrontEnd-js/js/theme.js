@@ -1,6 +1,6 @@
 const toggle = document.getElementById("dark-mode-toggle");
 
-// 🔹 تطبيق الثيم عند تحميل الصفحة
+//  تطبيق الثيم عند تحميل الصفحة
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
 
@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// 🔹 تغيير الثيم
+//  تغيير الثيم
 if (toggle) {
   toggle.addEventListener("change", () => {
     if (toggle.checked) {

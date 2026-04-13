@@ -8,13 +8,14 @@ import { Doctor } from '../doctor';
 })
 export class DoctorCardComponentComponent {
 
- 
+  // Receive doctor data from parent
   @Input() doctor!: Doctor;
 
- 
-@Output() selectDoctor = new EventEmitter<Doctor>();
+  // Emit selected doctor to parent
+  @Output() selectDoctor = new EventEmitter<Doctor>();
 
-bookDoctor() {
-  this.selectDoctor.emit(this.doctor);
-}
+  // Trigger when booking button is clicked
+  bookDoctor() {
+    this.selectDoctor.emit(this.doctor);
+  }
 }

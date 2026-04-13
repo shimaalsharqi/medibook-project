@@ -4,9 +4,11 @@
 
   <div class="row">
 
+    <!-- Loop through doctors -->
     <div class="col-md-4" *ngFor="let doctor of doctors">
 
-    
+      <!-- Pass doctor data -->
+      <!-- Handle doctor selection -->
       <app-doctor-card-component
         [doctor]="doctor"
         (selectDoctor)="onDoctorSelected($event)">

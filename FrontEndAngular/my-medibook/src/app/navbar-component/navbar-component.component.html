@@ -1,23 +1,29 @@
+<!-- Main navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
 
+    <!-- Logo and home link -->
     <a class="navbar-brand fw-bold" routerLink="/doctors">
       MediBook <span class="text-danger">✚</span>
     </a>
 
+    <!-- Toggle button for mobile view -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    
+    <!-- Collapsible menu -->
     <div class="collapse navbar-collapse" id="navbarNav">
 
+      <!-- Navigation links -->
       <ul class="navbar-nav ms-auto">
 
+        <!-- Doctors page link -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/doctors">Doctors</a>
         </li>
 
+        <!-- Appointment page link -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/appointment">Appointment</a>
         </li>
