@@ -102,7 +102,7 @@ function renderDoctors(doctors) {
 
   doctors.forEach(doc => {
 
-    // ⭐ stars
+    //  stars
     let stars = "⭐".repeat(Math.round(doc.rating));
 
     // 👤 initials

@@ -1,10 +1,8 @@
 /* ================= ROOT ================= */
 :root {
-  /* Primary */
   --primary: #0d6efd;
   --primary-hover: #0b5ed7;
 
-  /* Backgrounds */
   --bg-light: #f8f9fa;
   --bg-dark: #121212;
   --bg-overlay: rgba(0, 0, 0, 0.5);
@@ -14,24 +12,19 @@
   --bg-summary: #f4f1a1;
   --bg-doctor-header: #eef2f7;
 
-  /* Cards */
   --card-bg: #ffffff;
   --card-bg-dark: #1f1f1f;
 
-  /* Text */
   --text-dark: #212529;
   --text-light: #ffffff;
   --text-muted: #6c757d;
 
-  /* Status */
   --success: green;
   --warning: #ffc107;
   --error: #dc3545;
 
-  /* Borders */
   --border-light: #eee;
 
-  /* Shadows */
   --shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -47,7 +40,7 @@ nav.navbar {
 .home-page .nav-link,
 .doctors-page .linkk,
  .appointment-page .linkk{
-  color: var(--bg-footer);
+  color: black;
 }
 .doctors-page .linkk,
  .appointment-page .linkk{
@@ -59,12 +52,7 @@ nav.navbar {
   transition: 0.3s;
 }
 
-.navbar-toggler-icon{
- background-color: #000 !important;
- color: #0b5ed7 !important;
 
-  
-}
 /* ===== Theme Switcher ===== */
 .theme-switcher {
   position: relative;
@@ -84,12 +72,10 @@ nav.navbar {
   transition: 0.3s;
 }
 
-/* نخفي الشمس بالبداية */
 .theme-label .fa-sun {
   display: none;
 }
 
-/* لما يتفعل الدارك */
 #dark-mode-toggle:checked + .theme-label .fa-moon {
   display: none;
 }
@@ -99,12 +85,10 @@ nav.navbar {
   color: var(--warning);
 }
 
-/* لون القمر */
 .theme-label .fa-moon {
   color: var(--primary);
 }
 
-/* في الدارك */
 body.dark .theme-label {
   color: var(--text-light);
 }
@@ -160,7 +144,6 @@ body.dark .theme-label {
   width: max-content;
 }
 
-/* حركة الصفوف */
 .track-right {
   animation: moveRight 20s linear infinite;
 }
@@ -247,7 +230,6 @@ body.dark .theme-label {
 } */
 /* ===== Doctors Page Styling ===== */
 
-/* كروت الدكاترة */
 .doctors-page .doctor-card,
 .doctors-page .doctor-card-custom {
   border: 2px solid var(--primary);
@@ -256,7 +238,6 @@ body.dark .theme-label {
 }
 
 
-/* Hover للكارد */
 .doctors-page .doctor-card:hover,
 .doctors-page .doctor-card-custom:hover {
   border-color: var(--primary-hover);
@@ -270,7 +251,6 @@ body.dark .theme-label {
   background-color: #f8f9fa;
 }
 
-/* لما تضغط على الانبوت */
 .doctors-page input:focus,
 .doctors-page select:focus {
   border-color: var(--primary);
@@ -374,7 +354,6 @@ body.dark {
   color: #ffffff;
 }
 
-/* 🔥 كل السكاشن */
 body.dark section,
 body.dark .services-section,
 body.dark .Featured,
@@ -382,17 +361,14 @@ body.dark #statsSection {
   background-color: #000000 !important;
 }
 
-/* 🔥 Bootstrap bg-light */
 body.dark .bg-light {
   background-color: #000000 !important;
 }
 
-/* 🔥 الناف بار */
 body.dark nav.navbar {
   background-color: #000000 !important;
 }
 
-/* 🔥 النصوص كلها */
 body.dark h1,
 body.dark h2,
 body.dark h3,
@@ -406,7 +382,6 @@ body.dark li {
   color: #ffffff !important;
 }
 
-/* 🔥 اللينكات */
 body.dark .nav-link {
   color: #ffffff !important;
 }
@@ -415,7 +390,6 @@ body.dark .nav-link:hover {
   color: #ffc107 !important;
 }
 
-/* 🔥 الكروت (أصفر 💛) */
 body.dark .card,
 body.dark .service-card,
 body.dark .doctor-card,
@@ -425,7 +399,6 @@ body.dark .doctor-card-custom {
   border: none;
 }
 
-/* 🔥 داخل الكارد (النص يرجع أسود عشان يبان) */
 body.dark .card *,
 body.dark .service-card *,
 body.dark .doctor-card *,
@@ -433,7 +406,6 @@ body.dark .doctor-card-custom * {
   color: #000000 !important;
 }
 
-/* 🔥 الفورم */
 body.dark input,
 body.dark textarea,
 body.dark select {
@@ -442,20 +414,17 @@ body.dark select {
   border: 1px solid #ffc107;
 }
 
-/* 🔥 الأزرار */
 body.dark .btn {
   background-color: #ffc107;
   color: #000000;
   border: none;
 }
 
-/* 🔥 الفوتر */
 body.dark footer {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-/* 🔥 النصوص الثانوية */
 body.dark .text-muted {
   color: #cccccc !important;
 }
@@ -491,27 +460,23 @@ body.dark .text-muted {
   transition: 0.3s ease;
 }
 
-/* اسم اليوم */
 .day-name {
   font-size: 13px;
   color: #888;
   margin-bottom: 5px;
 }
 
-/* رقم اليوم */
 .day-number {
   font-size: 20px;
   font-weight: bold;
   color: #333;
 }
 
-/* Hover */
 .day-box:hover {
   background: #eef4ff;
   transform: translateY(-2px);
 }
 
-/* Active (مثل الصورة 🔥) */
 .day-box.active {
   border: 2px solid #0d6efd;
   background: #ffffff;

@@ -18,7 +18,7 @@ function renderDoctors(list) {
 
   list.forEach(doc => {
 
-    // ⭐ Stars
+    //  Stars
     let stars = "";
     for (let i = 0; i < Math.round(doc.rating); i++) {
       stars += "⭐";
@@ -73,7 +73,7 @@ function applyFilters() {
 
   let result = doctors;
 
-  // 🔍 Search
+  //  Search
   if (search) {
     result = result.filter(d =>
       d.name.toLowerCase().includes(search) ||
@@ -81,12 +81,12 @@ function applyFilters() {
     );
   }
 
-  // 🎯 Filter
+  //  Filter
   if (specialty !== "All") {
     result = result.filter(d => d.specialty === specialty);
   }
 
-  // 🔽 Sort
+  //  Sort
   if (sort === "rating") {
     result.sort((a, b) => b.rating - a.rating);
   }
@@ -104,10 +104,10 @@ function bookDoctor(id) {
 
   const selected = doctors.find(d => d.id === id);
 
-  // 💾 تخزين
+  
   localStorage.setItem("selectedDoctor", JSON.stringify(selected));
 
-  // 🔥 Toast
+  //  Toast
   const toastElement = document.getElementById("toastMsg");
   const toast = new bootstrap.Toast(toastElement);
 
